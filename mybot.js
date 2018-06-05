@@ -64,7 +64,12 @@ client.on('message',  message => {
     
    message.channel.send(`${num} ${message.author}`);
   }  
+  if(command === "pick"){
+    var rand = args[Math.floor(Math.random() * args.length)];
+    message.channel.send(`${rand} ${message.author}`);
+   
+  }
  
 });
-// THIS  MUST  BE  THIS  WAY
+
 client.login(process.env.BOT_TOKEN);
