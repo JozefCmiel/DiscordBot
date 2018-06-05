@@ -65,8 +65,13 @@ client.on('message',  message => {
    message.channel.send(`${num} ${message.author}`);
   }  
   if(command === "pick"){
+    if(args.length == 0){
+      message.channel.send(`Request without Arguments`);
+    }
+    else {
     var rand = args[Math.floor(Math.random() * args.length)];
     message.channel.send(`${rand} ${message.author}`);
+    }
    
   }
  
