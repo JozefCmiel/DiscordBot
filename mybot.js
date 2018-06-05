@@ -44,8 +44,15 @@ client.on('message',  message => {
     message.channel.send(`${rand} ${message.author}`);
   }
   if(command === "roll"){
+       if(args[0] == null){
+      var min = 0;
+      var max = 10;
+    }
+    else {
       var min = parseInt(args[0]);
       var max = parseInt(args[1]);
+    }
+   
       
       if(min > max){
           var tmp = max;
